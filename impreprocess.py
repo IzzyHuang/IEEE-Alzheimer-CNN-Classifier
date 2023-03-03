@@ -112,7 +112,6 @@ class ImagePreprocess:
             Parameters:
                 filename -- Name of the image file (.nii)
                 path -- The path were the image is located
-                atlas -- Reference sitk image for registration
                 label -- subgroup for the image, one of "MCI", "AD", "CN"
         '''
         

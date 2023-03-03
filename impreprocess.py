@@ -36,7 +36,7 @@ REG_DB_SUBFOLDERS = ['AD/', 'MCI/', 'CN/']
 
 
 class ImagePreprocess:
-    def __init__(self, path_to_atlas = None):
+    def __init__(self, path_to_atlas = "D:\ADNI\mn305_atlas.nii"):
 
         # path to atlas 
         self.path_to_atlas = path_to_atlas
@@ -105,7 +105,7 @@ class ImagePreprocess:
         elastixImageFilter.Execute()
         return elastixImageFilter.GetResultImage()
 
-    def register_and_save(self, filename, path, atlas, label):
+    def register_and_save(self, filename, path, label):
         ''' Process the image name and copy the image to its
             corresponding destination folder.
             
@@ -121,7 +121,7 @@ class ImagePreprocess:
         # load sitk image
         sitk_moving = sitk.ReadImage(complete_file_path)
         sitk_moving = self.resample_img(sitk_moving)
-        registrated = self.registrate(atlas, sitk_moving)
+        registrated = self.registrate(self.atlas, sitk_moving)
         
         # prepare the destination path
         complete_new_path = os.path.join(REG_DB, 

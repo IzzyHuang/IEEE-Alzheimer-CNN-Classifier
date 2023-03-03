@@ -1,6 +1,7 @@
 import os
 import csv
 import pandas as pd
+import image_preprocess
 
 CSV = "D:\ADNI\description.csv"
 DATABASE = "D:\ADNI\RAW"
@@ -14,6 +15,8 @@ ATLAS = "D:\ADNI\mn305_atlas.nii"
 
 df = pd.read_csv(CSV)
 
+process_class = image_preprocess.ImagePreprocess(ATLAS)
+
 # register all images
 for subdir in DB_SUBFOLDERS:
     for path, dirs, files in os.walk(DATABASE + subdir):
@@ -23,7 +26,7 @@ for subdir in DB_SUBFOLDERS:
                 row = df.loc[df['Image Data ID'] == id] 
                 group = row.iloc[0]['Group']
                 try:
-                    register_and_save(file, path, label)
+                    process_class.register_and_save(file, path, label)
                 except RuntimeError:
                     print('Exception with', os.path.join(path, file))
 
@@ -37,7 +40,7 @@ for folder in CLASS_FOLDERS:
             try:
                 img = os.path.join(path, file)
                 dest = os.path.join(dest_folder, file)
-                skull_strip_nii(img, dest, frac=0.2)
+                process_class.skull_strip_nii(img, dest, frac=0.2)
             except RuntimeError:
                 exceptions.append(img)
 

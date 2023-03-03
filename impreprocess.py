@@ -35,19 +35,14 @@ REG_DB_SUBFOLDERS = ['AD/', 'MCI/', 'CN/']
 
 
 class ImagePreprocess:
-    def __init__(self, old_path = None, dest_path = None):
+    def __init__(self, path_to_atlas = None):
 
-        # path to image 
-        self.old_path = old_path
+        # path to atlas 
+        self.path_to_atlas = path_to_atlas
 
-        # where the new image will be stored 
-        self.dest_path = dest_path
+        # atlas 
+        self.atlas = sitk.ReadImage(self.path_to_atlas)
 
-        # this line loads the images in sitk format - read image 
-        self.sitk_im = sitk.ReadImage(old_path)
-
-        # transform into a numpy array 
-        self.img = sitk.GetArrayFromImage(self.sitk_image)
 
     def resample_img(self, out_spacing=[2.0, 2.0, 2.0]):
         ''' This function resamples images to 2-mm isotropic voxels.

@@ -26,3 +26,24 @@ for subdir in DB_SUBFOLDERS:
                     register_and_save(file, path, label)
                 except RuntimeError:
                     print('Exception with', os.path.join(path, file))
+
+# applying skull stripping to all registered images
+exceptions = []
+for folder in CLASS_FOLDERS:
+    origin_folder = os.path.join(REG_DB, folder)
+    dest_folder = os.path.join(SKULL_STRIPPED_DB, folder)
+    for path, _, files in os.walk(origin_folder):
+        for file in files:
+            try:
+                img = os.path.join(path, file)
+                dest = os.path.join(dest_folder, file)
+                skull_strip_nii(img, dest, frac=0.2)
+            except RuntimeError:
+                exceptions.append(img)
+
+# save the exceptions in case you want to do something about them
+# in our case, FSL BET failed with a couple of images, although it
+# was a very small amount so they were simply discarded
+with open(os.path.join(SKULL_STRIPPED_DB, 'exceptions.txt'), 'w') as f:
+    for item in exceptions:
+        f.write("%s\n" % item)

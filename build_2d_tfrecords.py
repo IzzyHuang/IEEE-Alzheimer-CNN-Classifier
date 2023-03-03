@@ -12,7 +12,7 @@ import os
 #CONSTANTS
 
 # basic RAW databases, with registrated and skull-stripped images
-DB_SS_PATH = "D:\ADNI\PRE"
+DB_SS_PATH = "D:\ADNI\SS"
 
 # data subfolders (labels)
 CLASS_SUBFOLDERS = ['CN/', 'MCI/', 'AD/']

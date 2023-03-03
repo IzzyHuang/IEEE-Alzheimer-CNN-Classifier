@@ -29,7 +29,8 @@ import os
 # plt.show()
 
 # registered and organized database
-REG_DB = '/content/Regeistered'
+REG_DB = "D:\ADNI\REG"
+SKULL_STRIPPED_DB = "D:\ADNI\SS"
 # the images should be divided by its label
 REG_DB_SUBFOLDERS = ['AD/', 'MCI/', 'CN/']
 
@@ -42,6 +43,7 @@ class ImagePreprocess:
 
         # atlas 
         self.atlas = sitk.ReadImage(self.path_to_atlas)
+        self.atlas = self.resample_img(self.atlas)
 
 
 
@@ -111,37 +113,8 @@ class ImagePreprocess:
                 filename -- Name of the image file (.nii)
                 path -- The path were the image is located
                 atlas -- Reference sitk image for registration
+                label -- subgroup for the image, one of "MCI", "AD", "CN"
         '''
-        
-        # separate the name of the file by '_'
-        splitted_name = filename.strip().split('_')
-        # sometimes residual MacOS files appear; ignore them
-        if splitted_name[0] == '.': return
-        
-        # save the image ID
-        image_ID = splitted_name[-1][1:-4]
-        
-        # sometimes empty files appear, just ignore them (macOS issue)
-        if image_ID == '': return
-        # transform the ID into a int64 numpy variable for indexing
-        image_ID = np.int64(image_ID)
-            
-        #### IMPORTANT #############
-        # the following three lines are used to extract the label of the image
-        # ADNI data provides a description .csv file that can be indexed using the
-        # image ID. If you are not working with ADNI data, then you must be able to 
-        # obtain the image label (AD/MCI/NC) in some other way
-        # with the ID, index the information we need
-
-        # row_index = description.index[description['Image Data ID'] == image_ID].tolist()[0]
-
-        # # obtain the corresponding row in the dataframe
-
-        # row = description.iloc[row_index]
-
-        # # get the label
-
-        # label = row['Group']
         
         # prepare the origin path
         complete_file_path = os.path.join(path, filename)
@@ -155,8 +128,5 @@ class ImagePreprocess:
                                         label,
                                         filename)
         sitk.WriteImage(registrated, complete_new_path)
-
-    def run(self):
-        pass
 
 

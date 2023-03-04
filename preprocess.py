@@ -26,7 +26,7 @@ for subdir in DB_SUBFOLDERS:
                 row = df.loc[df['Image Data ID'] == id] 
                 group = row.iloc[0]['Group']
                 try:
-                    process_class.register_and_save(file, path, label)
+                    process_class.register_and_save(file, path, group)
                 except RuntimeError:
                     print('Exception with', os.path.join(path, file))
 

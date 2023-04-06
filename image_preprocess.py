@@ -27,7 +27,7 @@ class ImagePreprocess:
         self.atlas = sitk.ReadImage(self.path_to_atlas)
         self.atlas = self.resample_img(self.atlas)
 
-    def resample_img(itk_image, out_spacing=[2.0, 2.0, 2.0]):
+    def resample_img(self,itk_image, out_spacing=[2.0, 2.0, 2.0]):
         ''' This function resamples images to 2-mm isotropic voxels (default).
 
             Parameters:

@@ -11,14 +11,14 @@ import os
 from nipype.interfaces import fsl
 
 # registered and organized database
-REG_DB = "D:\ADNI\REG"
-SKULL_STRIPPED_DB = "D:\ADNI\SS"
+REG_DB = "/mnt/d/ADNI/REG"
+SKULL_STRIPPED_DB = "/mnt/d/ADNI/SS"
 # the images should be divided by its label
-REG_DB_SUBFOLDERS = ['AD/', 'MCI/', 'CN/']
+REG_DB_SUBFOLDERS = ['AD', 'MCI', 'CN']
 
 
 class ImagePreprocess:
-    def __init__(self, path_to_atlas="D:\ADNI\mn305_atlas.nii"):
+    def __init__(self, path_to_atlas="/mnt/d/ADNI/mn305_atlas.nii"):
 
         # path to atlas
         self.path_to_atlas = path_to_atlas
@@ -108,9 +108,10 @@ class ImagePreprocess:
         complete_new_path = os.path.join(REG_DB,
                                          label,
                                          filename)
+        print(f"writing image to {complete_new_path}")
         sitk.WriteImage(registrated, complete_new_path)
 
-    def skull_strip_nii(original_img, destination_img, frac=0.2):
+    def skull_strip_nii(self,original_img, destination_img, frac=0.2):
         ''' Practice skull stripping on the given image, and save
             the result to a new .nii image.
             Uses FSL-BET 

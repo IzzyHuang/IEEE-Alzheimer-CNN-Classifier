@@ -8,7 +8,7 @@ The model is a convolutional neural network that analyzes 3D MRI images. A much 
 
 This project was inspired by the wonderful work conducted by Oscar Darias Plasencia that can be seen [here](https://towardsdatascience.com/alzheimer-diagnosis-with-deep-learning-a-survey-265406fa542a). 
 
-P.S - the combination of medical imaging libraries and ML packages meant that the project in its entirety could not be run on any on system. Therefore, the files are littered with system specific constants and methods. Should you choose to play with the model, you could download the file from [here]() and look at the client file for how to interface with it. The requirement.txt could serve as a starting point for the libraries you would need.
+P.S - the combination of medical imaging libraries and ML packages meant that the project in its entirety could not be run on any on system. Therefore, the files are littered with system specific constants and methods. Should you choose to play with the model, you could download the file from [here](https://drive.google.com/file/d/1KPfZXW8-9cdQqYKw4PNOimw4P23CXg1Y/view?usp=sharing) and look at the client file for how to interface with it. The requirement.txt could serve as a starting point for the libraries you would need.
 
 ## Technical Specifications
 

@@ -1,2 +1,2 @@
-I74550.nii: {'CN': '0.9999', 'AD': '0.0001'}
-I66778.nii: {'CN': '0.0000', 'AD': '0.9658'}
+I74550.nii: {'CN': '0.9999', 'AD': '0.0001'} #cognitively normal
+I66778.nii: {'CN': '0.0000', 'AD': '0.9658'} #alzheimer's disease

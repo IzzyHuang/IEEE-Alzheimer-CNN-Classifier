@@ -48,7 +48,7 @@ P.S - the combination of medical imaging libraries and ML packages meant that th
     - The ROC curve is a graph that shows the trade-off between senstivity (true positive rate) and specificity (true negative rate) at different thresholds. The area under the ROC curve represents the model's ability to correctly classify positive and negative examples across all possible thresholds.
     - In simple terms, a higher ROC AUC score indicates that the model has better discrimination power, meaning it can more accurately distinguish between positive and negative examples. A perfect ROC AUC score is 1, which means that the model can perfectly separate positive and negative examples. Conversely, a score of 0.5 indicates that the model performs no better than random guessing.
     - Our model displayed an ROC AUC of 0.94, which means that our model has an accuracy of roughly 94% in correctly classifying positive and negative examples. 
-    ![ROC AUC](https://github.com/srsavas42/IE3_ML/blob/main/roc_curve.png)
+    ![ROC AUC](https://github.com/srsavas42/IE3_ML/blob/main/roc_auc.png)
 
 
 

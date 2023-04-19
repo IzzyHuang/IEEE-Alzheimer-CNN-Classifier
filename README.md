@@ -8,18 +8,20 @@ The model is a convolutional neural network that analyzes 3D MRI images. A much 
 
 This project was inspired by the wonderful work conducted by Oscar Darias Plasencia that can be seen [here](https://towardsdatascience.com/alzheimer-diagnosis-with-deep-learning-a-survey-265406fa542a). 
 
+P.S - the combination of medical imaging libraries and ML packages meant that the project in its entirety could not be run on any on system. Therefore, the files are littered with system specific constants and methods. Should you choose to play with the model, you could download the file from [here]() and look at the client file for how to interface with it. 
+
 ## Technical Specifications
 
 ### Data & Processing
 
 - Much of the data processing techniques employed in this article have been taken from the work by Plasencia and his thorough literature review and overview of the procedures for processing medical images that can be seen [here](https://towardsdatascience.com/alzheimer-diagnosis-with-deep-learning-data-preprocessing-4521d6e6ebeb). 
 - This section will briefly cover the tools employed and processing techniques and the above link serves as a much more thorough explanation.  
-- The data used in this article came from the Alzheimer's Disease Neuroimaging Initiative (ADNI) [database](https://adni.loni.usc.edu/study-design/).ADNI is a global research study in Alzheimer's and the biomarkers that inform us about the disease. Besides providing the data, ADNI has not participated in the project. 
+- The data used in this article came from the Alzheimer's Disease Neuroimaging Initiative (ADNI) [database](https://adni.loni.usc.edu/study-design/). ADNI is a global research study in Alzheimer's and the biomarkers that inform us about the disease. Besides providing the data, ADNI has not participated in the project. 
 - Two methods used in image preprocessing are image registration and skull stripping. Image registration involved adapting an image to a reference image, often called an atlas, which makes it simpler for a Convolutional Neural Network (CNN) to process. On the other hand, skull stripping is the process of removing information from the skull that appears in MRI images, in order to obtain a clean image as Alzheimer's disease (AD) biomarkers are not found in the skull. A detailed explanation of these steps follows this section. 
 - **Python tools employed**: 
     - SimpleITK: part of the SimpleElastix module, used to transform the data from ADNI which were in .nii images into numpy arrays and process them.
     - FSL: used for skull stripping.
-    - Libraries like numpy, Pandas, matplotlib, and FSL interface in Nipype. 
+    - Libraries like numpy, pandas, matplotlib, and FSL interface in Nipype. 
 - **Spatial Normalization**:
     - The spatial normalization preprocessing step is used to ensure that all images in a dataset have a consistent spatial structure.
     - This involves resampling the images to a common isotropic resolution and registering them to a reference atlas. 

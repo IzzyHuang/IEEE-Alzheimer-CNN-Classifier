@@ -40,7 +40,10 @@ P.S - the combination of medical imaging libraries and ML packages meant that th
 
 - For the project, we chose to use a Convolutional Neural Network (CNN) to analyze the MRI information from the ADNI study. We set up our model to give us a binary output, the probability that an MRI falls into the CN category or the AD category. Since the MCI category represents early AD, we chose to treat those cases as such, in order to account for MRIs that present early symptoms of Alzheimer's Disease.
 - A Convolutional Neural Network (CNN) is a deep learning algorithm used for image and video analysis. It is modeled after the way the human brain processes visual information. The network is made up of several layers that are responsible for identifying patterns in the input image. The convolutional layers use filters to extract useful features from the image, the pooling layers downsample the feature maps to reduce dimensionality, and the fully connected layers classify the image based on the features extracted in the previous layers. CNNs have achieved remarkable success in many computer vision tasks, such as object detection, recognition, and segmentation.
-- 
+- **Model Structure**:
+    - Our CNN model starts by initializing with the Sequential function. The first layer added is a Conv2D layer with 32 filters, a 3x3 kernel size, and Rectified Linear Unit (ReLU) activation function. Next, a MaxPooling2D layer with a 2x2 pool size is added to reduce the spatial dimensions of the output from the previous layer. This is repeated with another Conv2D layer with 64 filters and another MaxPooling2D layer. The Flatten function is used to convert the output of the convolutional layers into a one-dimensional vector. A dense layer with 64 neurons and ReLU activation is added, followed by an output layer with two neurons using the sigmoid activation function. The model is compiled with the Adam optimizer, binary cross-entropy loss, and accuracy metrics. Finally, the model is fit to the data using the training and validation datasets with 20 epochs, batch size, and steps per epoch specified.
+
+    ![Model Structure](https://github.com/srsavas42/IE3_ML/blob/main/resources/model.png)
 
 - **Quality Analysis**:
     - With any ML model, it is quite difficult to definitively ascertain its accuracy. Owing to the imbalances in our classes, we chose to use the Receiver Operating Characteristic - Area Under the Curve (ROC AUC). 
@@ -49,7 +52,7 @@ P.S - the combination of medical imaging libraries and ML packages meant that th
     - In simple terms, a higher ROC AUC score indicates that the model has better discrimination power, meaning it can more accurately distinguish between positive and negative examples. A perfect ROC AUC score is 1, which means that the model can perfectly separate positive and negative examples. Conversely, a score of 0.5 indicates that the model performs no better than random guessing.
     - Our model displayed an ROC AUC of 0.94, which means that our model has an accuracy of roughly 94% in correctly classifying positive and negative examples. 
 
-    ![ROC AUC](https://github.com/srsavas42/IE3_ML/blob/main/roc_auc.png)
+    ![ROC AUC](https://github.com/srsavas42/IE3_ML/blob/main/resources/roc_auc.png)
 
 ### Client
 

@@ -56,4 +56,14 @@ P.S - the combination of medical imaging libraries and ML packages meant that th
 
 ### Client
 
+- Our demo in the introduction presents our client site, built using a lightweight module called Streamlit that allows you to easily display and interact with ML models without requiring much in the way of front end code.
+- We allow users to upload a 3d MRI image (type .nii), process it and then use our model to make a classification prediction.
+- The streamlit folder outlines all the specific streamlit widgets employed.
+
 ## The Way Forward
+
+- Our project goes a long way to affirm the usability of ML and specificially CNN, models in diagnosing Alzheimer's early. It shows how these models can be used to identity Alzheimer's from MRI data with an astonishingly high level of accuracy. 
+- However, there are a number of avenues for improvement. 
+- The availability of more high-quality, labelled data would allow us further tune our model and a greater specificity in labelling would allow us to run a more involved classification scheme that allows you to accurately determine which stage of Alzheimer's a patient is currently in. 
+- Working more closely with neurosurgeons would allow us to better determine areas in the brain that can present signs of Alzheimer's. 
+- Ultimately, this project aims to develop on work done by individuals like Placensia and inspire others to delve further into the applications of AI & ML in the medical space.

@@ -37,7 +37,7 @@ st.set_page_config(page_title="NeuroNet")
 st.markdown(hide_menu_style, unsafe_allow_html=True)
 st_lottie(lottie_file, height=200, key='coding')
 
-st.title("**_NeuroNet_: A Deep Learning Model for Alzheimer's Diagnosis**")
+st.title("**NeuroNet: A Deep Learning Model for Alzheimer's Diagnosis**")
 st.write(
     "Upload your **:blue[MRI scan]** and find out if you could be at risk for Alzheimer's.")
 

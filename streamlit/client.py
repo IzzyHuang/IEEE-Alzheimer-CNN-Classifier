@@ -125,9 +125,11 @@ def get_prediction(img_dir, img_name):
 
     # Make a prediction using your model
     predicted_probs = model.predict(image_2d)
+    CN = predicted_probs[0][0]*100
+    AD = predicted_probs[0][1]*100
     pred = {
-      "CN": "{:0.4f}".format(predicted_probs[0][0]),
-      "AD": "{:0.4f}".format(predicted_probs[0][1])
+      "CN": "{:0.2f}".format(CN),
+      "AD": "{:0.2f}".format(AD)
     }
     return pred
 

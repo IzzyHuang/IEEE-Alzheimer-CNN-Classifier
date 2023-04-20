@@ -2,6 +2,7 @@ import streamlit as st
 import random
 import string
 import os
+import time
 
 
 def get_random_string(length):
@@ -11,7 +12,7 @@ def get_random_string(length):
 
 
 def store_nifti_data(file, temp_data_directory):
-    st.warning('Loading data from NIfTI file.')
+    alert = st.warning('Loading data from NIfTI file.')
 
     # Save NIfTI file to temporary directory
     file_path = os.path.join(temp_data_directory, file.name)
@@ -23,8 +24,10 @@ def store_nifti_data(file, temp_data_directory):
         st.warning('Not a valid NIfTI file.', icon="⚠️")
         os.remove(file_path)
         return False
-
-    st.success('The file is uploaded')
+    
+    time.sleep(1.5)
+    
+    alert.empty()
 
     return True
 

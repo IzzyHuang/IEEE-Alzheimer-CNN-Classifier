@@ -3,7 +3,7 @@
 ## Introduction
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=2NbneOf9Md4" target="_blank">
- <img src="http://img.youtube.com/vi/2NbneOf9Md4/mqdefault.jpg" alt="Watch the video" width="240" height="180" border="10" />
+ <img src="http://img.youtube.com/vi/2NbneOf9Md4/mqdefault.jpg" alt="Watch the video" width="480" height="270" border="10" />
 </a>
 
 This project is a deep learning model that can diagnose Alzheimer's Disease through MRI data. Moreover, it can even detect Alzheimer's early, in the form of early mild cognitive impairment and late mild cognitive impairment. While this model isn't meant to be a definitive test to diagnose Alzheimer's, it can serve as an initial diagnostic tool. 

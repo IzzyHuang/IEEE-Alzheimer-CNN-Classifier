@@ -6,11 +6,11 @@
  <img src="http://img.youtube.com/vi/2NbneOf9Md4/mqdefault.jpg" alt="Watch the video" width="480" height="270" border="10" />
 </a>
 
-This project is a deep learning model that can diagnose Alzheimer's Disease through MRI data. Moreover, it can even detect Alzheimer's early, in the form of early mild cognitive impairment and late mild cognitive impairment. While this model isn't meant to be a definitive test to diagnose Alzheimer's, it can serve as an initial diagnostic tool. 
+This project is a deep learning model that can diagnose Alzheimer's Disease through MRI data. Moreover, it can even detect Alzheimer's early, in the form of early mild cognitive impairment and late mild cognitive impairment. While this model isn't meant to be a definitive test to diagnose Alzheimer's, it can serve as an initial diagnostic tool. The model is a convolutional neural network that analyzes 3D MRI images. A much more thorough explanation of the technical specifications, including image preprocessing and the model training is in the next few sections.
 
-The model is a convolutional neural network that analyzes 3D MRI images. A much more thorough explanation of the technical specifications, including image preprocessing and the model training is in the next few sections.
+This project was completed as part of the IEEE Technical Program by Izzy Huang, Amiin Muse, Hyeyun Jeong, Kavi Subramanyan and Akash Vikram Shroff, guided by Stephen Savas.
 
-This project was inspired by the wonderful work conducted by Oscar Darias Plasencia that can be seen [here](https://towardsdatascience.com/alzheimer-diagnosis-with-deep-learning-a-survey-265406fa542a). 
+Our undertaking was inspired by the wonderful work conducted by Oscar Darias Plasencia that can be seen [here](https://towardsdatascience.com/alzheimer-diagnosis-with-deep-learning-a-survey-265406fa542a). 
 
 P.S - the combination of medical imaging libraries and ML packages meant that the project in its entirety could not be run on any on system. Therefore, the files are littered with system specific constants and methods. Should you choose to play with the model, you could download the file from [here](https://drive.google.com/file/d/1KPfZXW8-9cdQqYKw4PNOimw4P23CXg1Y/view?usp=sharing) and look at the client file for how to interface with it. The requirement.txt could serve as a starting point for the libraries you would need.
 

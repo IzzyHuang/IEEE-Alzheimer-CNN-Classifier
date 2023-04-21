@@ -37,7 +37,9 @@ P.S - the combination of medical imaging libraries and ML packages meant that th
     - The preprocessing flow typically involves loading the original images, extracting their labels, resampling and registering them to the atlas, and saving the processed images to appropriate destination folders based on their labels. This can be implemented using loops to iterate through all images in the dataset. The specific implementation may vary depending on the libraries and methods used in the code.
 - **Skull Stripping**:
     - Skull stripping was the second step in image preprocessing after all the images were spatially normalized. The goal of Skull stripping was to remove irrelevant information from the images and leave only the brain tissue. FSL BET (FMRIB Software Library) interface running on Nipype was used for that specific task. 
-
+- The images were then converted to 2d by performing 16 axial cuts. 
+- This is an example of what the final result of processing looked like.
+![Cognitively Typical Preprocessed](https://github.com/srsavas42/IE3_ML/blob/main/resources/cognitive_typical_preprocessed.png)
 - Finally, the processed data was converted into a TFRecords type to account for limitations on storage with Google Colab.
 
 ### Model & Training

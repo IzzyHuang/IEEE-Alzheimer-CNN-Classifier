@@ -8,7 +8,7 @@
 
 This project is a deep learning model that can diagnose Alzheimer's Disease through MRI data. Moreover, it can even detect Alzheimer's early, in the form of early mild cognitive impairment and late mild cognitive impairment. While this model isn't meant to be a definitive test to diagnose Alzheimer's, it can serve as an initial diagnostic tool. The model is a convolutional neural network that analyzes 3D MRI images. A much more thorough explanation of the technical specifications, including image preprocessing and the model training is in the next few sections.
 
-This project was completed as part of the IEEE Technical Program by Izzy Huang, Amiin Muse, Hyeyun Jeong, Kavi Subramanyan and Akash Vikram Shroff, guided by Stephen Savas and was awarded "Best Overall Project" by a panel of judges from companies such as IBM & Tesla, among others.
+This project was completed as part of the IEEE Technical Program by Akash Vikram Shroff, Amiin Muse, Hyeyun Jeong, Izzy Huang, and Kavi Subramanyan under the guidance of Stephen Savas and was awarded "Best Overall Project" by a panel of judges from companies such as IBM & Tesla, among others.
 
 Our undertaking was inspired by the wonderful work conducted by Oscar Darias Plasencia that can be seen [here](https://towardsdatascience.com/alzheimer-diagnosis-with-deep-learning-a-survey-265406fa542a). 
 

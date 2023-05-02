@@ -73,3 +73,4 @@ P.S - the combination of medical imaging libraries and ML packages meant that th
 - The availability of more high-quality, labelled data would allow us further tune our model and a greater specificity in labelling would allow us to run a more involved classification scheme that allows you to accurately determine which stage of Alzheimer's a patient is currently in. 
 - Working more closely with neurosurgeons would allow us to better determine areas in the brain that can present signs of Alzheimer's. 
 - Ultimately, this project aims to develop on work done by individuals like Placensia and inspire others to delve further into the applications of AI & ML in the medical space.
+
